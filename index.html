@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Académico - Santiago Andrés Vargas Obando</title>
+    <style>
+        :root {
+            --bg-color: #fcfbf9;
+            --primary-color: #1a2a3a;
+            --accent-color: #8c764d;
+            --text-color: #2c2c2c;
+            --card-bg: #ffffff;
+            --border-color: #e2dacb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 940px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .linkedin-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 10px 25px;
+            border: 1px solid var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .linkedin-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(26, 42, 58, 0.02);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .cv-grid { 
+                grid-template-columns: 1fr; 
+                gap: 20px;
+            }
+        }
+
+        .info-contacto ul {
+            list-style: none;
+        }
+
+        .info-contacto li {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .info-contacto strong {
+            color: var(--primary-color);
+            display: block;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .sobre-mi p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .school-img-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .school-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            background: #fff;
+        }
+
+        .school-link {
+            display: inline-block;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-style: italic;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: color 0.3s;
+        }
+
+        .school-link:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #faf8f5;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #fdfdfc;
+        }
+
+        .table-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .table-link:hover {
+            text-decoration: underline;
+        }
+
+        .companions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .companion-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .companion-card:hover {
+            border-color: var(--accent-color);
+            background-color: #faf8f5;
+        }
+
+        .companion-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .companion-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            border: 1px solid var(--primary-color);
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            font-family: sans-serif;
+            transition: all 0.3s;
+        }
+
+        .companion-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #7c7c7c;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Santiago Andrés Vargas Obando</h1>
+            <p>Estudiante Universitario | Ciencia de la Computación / Ingeniería</p>
+            <a href="https://www.linkedin.com/in/santiago-andres-vargas-obando-b41339419" target="_blank" class="linkedin-btn">Curriculum Vitae / LinkedIn</a>
+        </header>
+
+        <section id="perfil">
+            <h2>Descripción Personal</h2>
+            <div class="cv-grid">
+                <div class="info-contacto">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><strong>Email</strong>santiago.vargas@ucsp.edu.pe</li>
+                        <li><strong>Ubicación</strong>Arequipa, Arequipa, Perú</li>
+                        <li><strong>Educación</strong>Educación Superior en Formación</li>
+                    </ul>
+                </div>
+                <div class="sobre-mi">
+                    <h3>Sobre mí</h3>
+                    <p>
+                        Estudiante proactivo con fuerte inclinación hacia la resolución de problemas, el análisis lógico y el desarrollo académico. Con experiencia práctica en la gestión de proyectos de software y automatización utilizando Python, así como en la estructuración e investigación académica.
+                    </p>
+                    <p>
+                        Me destaco por ser una excelente persona para trabajar en grupos, promoviendo la colaboración armónica, la comunicación asertiva y un constante interés por aprender nuevas metodologías que optimicen tanto el rendimiento colectivo como individual.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="educacion-escolar">
+            <h2>Educación Escolar</h2>
+            <div class="school-img-container">
+                <img src="img/prom.jpg" alt="Promoción Colegio Prescott" class="school-img">
+            </div>
+            <div style="text-align: center;">
+                <p>Orgulloso exalumno de la comunidad Prescott. Formación académica de excelencia, tradición y principios sólidos orientados al futuro.</p>
+                <br>
+                <a href="https://www.prescott.edu.pe" target="_blank" class="school-link">Visitar el sitio oficial del Colegio Prescott</a>
+            </div>
+        </section>
+
+        <section id="cursos">
+            <h2>Cursos y Cátedras</h2>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asignatura</th>
+                            <th>Catedrático</th>
+                            <th>Red Profesional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Introducción a la Computación</strong></td>
+                            <td>Dr. Ernesto Cuadros-Vargas</td>
+                            <td><a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank" class="table-link">Linkedin del Docente</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fundamentos de la Programación</strong></td>
+                            <td>Ms. Rosa Paccotacya</td>
+                            <td><a href="https://www.linkedin.com/in/rpaccotacyay/" target="_blank" class="table-link">Linkedin del Docente</a></td>
+                        </tr>
+                         <tr>
+                            <td><strong>Fundamentos Matemáticos de la Programación</strong></td>
+                            <td>Ms. Fiorella Rendon</td>
+                            <td><a href="https://www.linkedin.com/in/fiorella-maría-rendón-garcía-7aa9b7374/" target="_blank" class="table-link">Linkedin del Docente</a></td>
+                        </tr>
+                          <tr>
+                            <td><strong>Logica I</strong></td>
+                            <td>Ms. Yahaira Byrne Rivera</td>
+                            <td><a href="https://www.linkedin.com/in/yahaira-byrne-rivera-274201221/" target="_blank" class="table-link">Linkedin del Docente</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="companeros">
+            <h2>Red de Compañeros</h2>
+            
+            <div class="companions-grid">
+                <div class="companion-card">
+                    <div>
+                        <h3>Ami Hanna Andía Choque</h3>
+                        <p style="font-size: 0.85rem; color:#7c7c7c; font-style: italic;">Sitio Personal</p>
+                    </div>
+                    <a href="https://amiandia-oss.github.io/Ami-Hanna-Andia-Choque/" target="_blank" class="companion-link">Visitar</a>
+                </div>
+
+                <div class="companion-card">
+                    <div>
+                        <h3>Juan David García Humpire</h3>
+                        <p style="font-size: 0.85rem; color:#7c7c7c; font-style: italic;">Sitio Personal</p>
+                    </div>
+                    <a href="https://judavi-dev.github.io/" target="_blank" class="companion-link">Visitar</a>
+                </div>
+
+                <div class="companion-card">
+                    <div>
+                        <h3>Fernando Sebastián Vera Ramos</h3>
+                        <p style="font-size: 0.85rem; color:#7c7c7c; font-style: italic;">Sitio Personal</p>
+                    </div>
+                    <a href="https://mi-pagina-xipc.vercel.app/" target="_blank" class="companion-link">Visitar</a>
+                </div>
+
+                <div class="companion-card">
+                    <div>
+                        <h3>Thiago Mathias Nieves Checca</h3>
+                        <p style="font-size: 0.85rem; color:#7c7c7c; font-style: italic;">Sitio Personal</p>
+                    </div>
+                    <a href="https://thiagonieves-eng.github.io" target="_blank" class="companion-link">Visitar</a>
+                </div>
+                
+                <div class="companion-card">
+                    <div>
+                        <h3>Gabriel Fabrizio Flores Llancaya</h3>
+                        <p style="font-size: 0.85rem; color:#7c7c7c; font-style: italic;">Sitio Personal</p>
+                    </div>
+                    <a href="https://gabriel-flores-ll.github.io" target="_blank" class="companion-link">Visitar</a>
+                </div>
+
+                <div class="companion-card">
+                    <div>
+                        <h3>Diego Alonso Aragon Mamani</h3>
+                        <p style="font-size: 0.85rem; color:#7c7c7c; font-style: italic;">Sitio Personal</p>
+                    </div>
+                    <a href="https://diegoalonsoaragonmamani.github.io/DiegoAlonsoAragonMamani/" target="_blank" class="companion-link">Visitar</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Santiago Andrés Vargas Obando. Todos los derechos reservados.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
